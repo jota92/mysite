@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+</head>
+
+<body>
+		<div class="menubar">
+			<ul>
+			<li><div class="applelogo"></div>
+				<ul class="menu">
+					<li>このサイトについて</li>
+					<li>ソフトウェア・アップデート...</li>
+					<li>システム終了...</li>
+					<hr />
+					<li>Guest をログアウト...</li>
+				</ul>
+			</li>
+
+			<li>Bibohlog
+				<ul class="menu">
+					<li>このページについて</li>
+					<hr />
+					<li>環境設定...</li>
+					<li>意見を送る...</li>
+					<li>サービス</li>
+					<hr />
+					<li>終了</li>
+				</ul>
+			</li>
+			
+			<li>ファイル
+				<ul class="menu">
+					<li>新規コメント</li>
+					<li>新規ページ</li>
+					<li>開く...</li>
+					<hr />
+					<li>保存</li>
+					<li>バージョンを保存...</li>
+					<hr />
+					<li>プリント...</li>
+				</ul>
+			</li>
+			
+			<li>編集
+				<ul class="menu">
+					<li>カット</li>
+					<li>コピー</li>
+					<li>項目をペースト</li>
+					<hr />
+					<li>検索...</li>
+				</ul>
+			</li>
+			
+			<li>表示
+				<ul class="menu">
+					<li>メニューを隠す</li>
+					<li>全画面表示</li>
+					<li>拡大...</li>
+					<li>ウィンドウサイズに合わせる</li>
+				</ul>
+			</li>
+			
+			<li>ヘルプ
+				<ul class="menu">
+					<li>ヘルプセンター</li>
+					<li>バージョン情報</li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		
+		<div class="menubar2">
+			<ul>
+			<li><div class="spotlight"></div>
+				<ul class="spotlightMenu">
+					<li><span>Spotlight</span><div></div></li>
+				</ul>
+			</li>
+			<li><div class="clock" id="clockObj_1"></div>
+				<ul class="menu clockMenu">
+				<li><div id="clockObj_2"></div></li>
+				<hr/>
+				<li>アナログで表示</li>
+				<li>デジタルで表示</li>
+				<hr/>
+				<li>"日付と時刻"環境設定を開く...</li>
+				</ul>
+			</li>
+			<li><div class="volume"></div>
+				<ul class="volumeMenu">
+					<li><div class="v_Lditch"><div class="v_Sditch">
+							<div class="v_slider"></div>
+						</div></div>
+					</li>
+				</ul>
+			</li>
+			<li><div class="wifi"></div>
+				<ul class="menu wifiMenu">
+				<li>Wi-Fi:入</li>
+				<li>Wi-Fiを切にする</li>
+				<hr/>
+				<li>Example1</li>
+				<li>Example2</li>
+				<hr/>
+				<li>ほかのネットワークに接続...</li>
+				<li>ネットワークを作成...</li>
+				<li>"ネットワーク"環境設定を開く...</li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+	
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="js/clock.js"></script>
+<script type="text/javascript">
+
+	
+	$('.menubar').click(function()
+		{
+		$('.menubar').toggleClass('menubar_focus');
+		}
+	);
+	$('.menubar2').click(function()
+		{
+		$('.menubar2').toggleClass('menubar_focus');
+		}
+	);
+	$('.v_slider').draggable({containment:'.v_Lditch'});
+	
+	
+</script>
+
+</body>
+
+</html>

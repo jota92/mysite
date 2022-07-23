@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+</head>
+<body>
+	<script type="text/javascript">
+	$(function()
+		{
+		$('.desktop_item').draggable({cancel:'.name'});
+		});
+		
+	$('.desktop_item').click(function()
+		{
+		$('.desktop_item').removeClass('desktop_item_focus');
+		$(this).addClass('desktop_item_focus');
+		}
+	);
+	
+	</script>
+		
+<div class="desktop_item">
+	<div class="desktop_icon"><img src="img/dock/hdd.png" width="80px"/></div>
+	<div class="name">Macintosh HD</div>
+</div>
+
+<div class="desktop_item">
+	<div class="desktop_icon"><img src="img/dock/server.png" width="80px"/></div>
+	<div class="name">NAS</div>
+</div>
+
+<div class="desktop_item">
+	<div class="desktop_icon"><img src="img/dock/folder.png" width="80px"/></div>
+	<div class="name">新しいフォルダ 1</div>
+</div>
+
+<div class="desktop_item">
+	<div class="desktop_icon"><img src="img/dock/folder.png" width="80px"/></div>
+	<div class="name">新しいフォルダ 2</div>
+</div>
+
+<div class="desktop_item">
+	<div class="desktop_icon"><img src="img/dock/folder.png" width="80px"/></div>
+	<div class="name">新しいフォルダ 3</div>
+</div>
+
+</body>
+</html>

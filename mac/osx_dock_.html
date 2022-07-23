@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="stylesheet" href="css/dockstyle.css" />
+<title></title>
+
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.js"></script>
+
+<script type="text/javascript">
+document.onmousemove = function(e) {
+	if(!e) e = window.event;
+	
+	var mouseX = e.clientX;
+	var mouseY = e.clientY;
+	var iconSize = 80;
+	
+	for (var i = 0; i < 7; i++) {		
+		var box = new Array();
+		var posX = new Array();
+		var posY = new Array();
+		box[i] = document.getElementById("icon" + i).getBoundingClientRect();
+		posX[i] = box[i].left;
+		posY[i] = box[i].top;
+		
+		var distX = new Array();
+		var distY = new Array();
+		var dist = new Array();
+		distX[i] = Math.abs(mouseX - posX[i] - iconSize/2);
+		distY[i] = Math.abs(mouseY - posY[i] - iconSize/2);
+		dist[i]  = Math.sqrt(distX[i]*distX[i] + distY[i]*distY[i]);
+		
+		var objSize = new Array();
+		var ZoomValue = new Array();
+		ZoomValue[i] = Math.max(0,30 - dist[i]/5);
+		 /* you can change how far the animation starts and how the scale is */
+		objSize[i] = iconSize + ZoomValue[i];
+		
+		var resetX = new Array();
+		var resetY = new Array();
+		resetX[i] = iconSize/2 + 80*i - objSize[i]/2;
+		resetY[i] = objSize[i]/2 - iconSize;
+
+		$("#icon"+i).width(objSize[i]);	
+		$("#icon"+i).height(objSize[i]);
+		$("#icon"+i).css({"left":resetX[i]+12*i, "bottom":resetY[i]});
+		
+		$("#label"+i).css({"margin-left":-16, "margin-bottom":resetY[i]/2});	
+			
+	}
+
+}
+
+</script>
+
+<div class="dock_container">
+
+	<div class="dockbase">
+		<ul>
+			<li id="icon0"><span id="label0">Guest</span><a href="#" onclick="aaa()"><img src="img/dock/home.png" /></a></li>
+			<li id="icon1"><span id="label1">Finder</span><a href="#" onclick="aaa()"><img src="img/dock/finder.png" /></a></li>
+			<li id="icon2"><span id="label2">Folder1</span><a href="#" onclick="aaa()"><img src="img/dock/folder.png" /></a></li>
+			<li id="icon3"><span id="label3">iTunes</span><a href="#" onclick="aaa()"><img src="img/dock/cd.png" /></a></li>
+			<li id="icon4"><span id="label4">ColorPicker</span><a href="#" onclick="aaa()"><img src="img/dock/color.png" /></a></li>
+			<li id="icon5"><span id="label5">Macintosh</span><a href="#" onclick="aaa()"><img src="img/dock/hdd.png" /></a></li>
+			<li id="icon6"><span id="label6">Desktop</span><a href="#" onclick="aaa()"><img src="img/dock/desktop.png" /></a></li>
+		</ul>
+	</div>
+	
+</div>
+
+</body>
+
+</html>
