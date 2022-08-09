@@ -1,0 +1,30 @@
+/* 画面幅の50%の幅で画像を表示 */
+.image-vw {
+  width : 90vw ; 
+}
+
+.flexcard{
+
+  border:1px solid #285EA0;
+  }
+ 
+  .download{
+  width:400px;
+  height:auto;
+  margin:0 15px;
+  text-align:center;
+  }
+ 
+
+  .dlb{
+  color:#fff;
+  text-align:center;
+  padding:5px;
+  margin-top:15px;
+  background-color:#126df4;
+  border-radius: 50px;
+  box-shadow:0px 2px 2px #999;
+  }
+  div.center {
+    text-align: center; 
+}
