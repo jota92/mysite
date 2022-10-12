@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>設置の仕方</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+	</head>
+	<input type="button" value="ガチャを引く" onclick="window.location.reload();" />
+	<script type="text/javascript">
+		var imglist = new Array(
+		   "data/1.gif",
+		   "data/2.gif",
+		   "data/3.gif",
+		   "data/4.gif" );
+		var selectnum = Math.floor(Math.random() * imglist.length);
+		var output = "<img src=" + imglist[selectnum] + ">";
+		document.write(output);
+	 </script>
+
+
+			<script src="data/js/main.js"></script>
+
+	</body>
+</html>
