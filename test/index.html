@@ -4,12 +4,14 @@
 	<head>
 		<title>設置の仕方</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 	</head>
 	<input type="button" value="ガチャを引く" onclick="window.location.reload();" />
 	<script type="text/javascript">
 		var imglist = new Array(
+			
 		   "data/1.gif",
 		   "data/2.gif",
 		   "data/3.gif",
@@ -18,9 +20,41 @@
 		var output = "<img src=" + imglist[selectnum] + ">";
 		document.write(output);
 	 </script>
+<script>
+    var change_scale = {
+        "container": 500,
+        "percent": 40,
+        "function": function() {
+            "use strict";
+            if (change_scale.percent === window.devicePixelRatio) {
+                var scale = document.documentElement.clientWidth;
+                scale = scale / change_scale.container;
+                scale = "scale(" + scale + ")";
+                document.body.style.transform = scale;
+            } else {
+                change_scale.percent = window.devicePixelRatio;
+            }
+        }
+    };
+    (function() {
+        "use strict";
+        if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
+          
+            }
+        }
+        change_scale.function();
+    }());
+    window.addEventListener("resize", function(event) {
+        "use strict";
+        change_scale.function();
+    });
+</script>
 
 
-			<script src="data/js/main.js"></script>
+
+
+<link rel="stylesheet" href="data/main.css" />
+			<script src="data/main.js"></script>
 
 	</body>
 </html>
